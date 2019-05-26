@@ -3,6 +3,11 @@ var http = require('http');
 const PORT = "1235";
 
 var server = http.createServer(function (req, res) {
+    console.log("请求URL："+req.url);
+    if(req.url==='/favicon.ico'){
+        res.end()
+        return;
+    }
     console.log('客户端的地址：' + req.connection.remoteAddress
         + '/客户端的端口：' + req.connection.remotePort);
     res.writeHead(200, {'Content-Type': 'text/plain'});

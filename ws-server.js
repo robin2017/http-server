@@ -1,6 +1,7 @@
 const WebSocketServer = require('ws').Server,
     webSocketServer = new WebSocketServer({port:12800});
-//lsof -i:12800
+//mac上 lsof -i:12800
+//centos上 netstat -lnp|grep 12800
 var connectNum = 0;
 webSocketServer.on('connection',function (ws) {
     ++connectNum;

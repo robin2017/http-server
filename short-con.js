@@ -5,7 +5,8 @@ const PORT = "1234";
 http.createServer(function(req, res) {
     console.log("请求URL："+req.url);
     if(req.url==='/favicon.ico'){
-        res.end()
+        res.end('no icon');
+        res.destroy();
         return;
     }
     console.log('客户端的地址：'+req.connection.remoteAddress

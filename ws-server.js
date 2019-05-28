@@ -8,8 +8,11 @@ webSocketServer.on('connection',function (ws) {
     console.log('connection num is:',connectNum);
     ws.on('message',function (message) {
         console.log('接收并发送：',message);
-        ws.send(message)
-    })
+        setTimeout(()=>{
+            ws.send(message)
+        },3000)
+
+    });
     ws.on('close',function () {
         connectNum--;
     })
